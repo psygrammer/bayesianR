@@ -3,7 +3,7 @@ Chapter 02. Introduction : Credibility, Models, and Parameters
 
 * 발제 : 김무성
 * Book : Doing Bayesian Data Analysis - A Tutorial with R, JAGS, and Stan (EDITION 2)
-* 참고자료 :
+* 참고자료 : 더 추가하겠습니다.
  - 1. http://posterior.egloos.com/9602501
  - 2. http://posterior.egloos.com/9602693
  - 3. http://posterior.egloos.com/9603023
