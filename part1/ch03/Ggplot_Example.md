@@ -9,7 +9,7 @@ library(ggplot2)
 Read data
 
 ```r
-Replicate <- read.csv("C:/Users/Yoo/Desktop/forR.csv", header=T)
+Replicate <- read.csv("C:/Users/Yoo/Documents/GitHub/bayesianR/part1/ch03/forR.csv", header=T)
 ```
 
 Scatter Plot
