@@ -5,15 +5,45 @@ output:
     keep_md: yes
 ---
 
+
+
+
+1. 목적론적 설명 : 대상의 기능이나, 의도 목적에 근거한 설명
+
+
+예-박쥐들은 모기의 개체수를 조절하기 위해 사냥을 한다.
+
+
+
+
+2. 기계론적 설명: 대상의 근접 기제에 근거한 설명
+
+
+예-수소원자와 산소원자가 결합해서 물이 된다. 
+
+
+
+
+
+
 1.ggplot2 packages
 ```{r}
+#install.packages("ggplot2)
 library(ggplot2)
 ```
 
 Read data
 ```{r}
-Replicate <- read.csv("C:/Users/Yoo/Desktop/forR.csv", header=T)
+Replicate <- read.csv("C:/Users/Yoo/Documents/GitHub/bayesianR/part1/ch03/forR.csv", header=T)
+Replicate
 ```
+
+dv - 전체 목적론적 설명 중, 틀린 목적론적 설명이 옳다고 판단한 비율
+
+classnum - 대학에서 수강한 과학 관련 수업의 개수
+
+condition- 실험 처치 조건
+
 
 Scatter Plot
 ```{r}
@@ -23,7 +53,7 @@ scatter+geom_point(aes(size=1))+labs(x="Correct Response to Teleological Explana
 
 Scatter Plot with Smooth Line
 ```{r}
-scatter+geom_point(aes(size=1))+geom_smooth(method='lm',aes(fill=as.factor(condition)),alpha=0.2)+labs(x="Correct Response to Teleological Explanation",y="Number of Science Class")
+scatter+geom_point(aes(size=1, color=as.factor(condition)),position='jitter')+geom_smooth(method='lm',aes(fill=as.factor(condition)),alpha=0.2)+labs(x="Correct Response to Teleological Explanation",y="Number of Science Class")
 ```
 
 Correlation Coefficient
