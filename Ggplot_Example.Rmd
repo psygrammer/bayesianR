@@ -1,0 +1,39 @@
+---
+title: "Ggplot_Example"
+output:
+  html_document:
+    keep_md: yes
+---
+
+1.ggplot2 packages
+```{r}
+library(ggplot2)
+```
+
+Read data
+```{r}
+Replicate <- read.csv("C:/Users/Yoo/Desktop/forR.csv", header=T)
+```
+
+Scatter Plot
+```{r}
+scatter<-ggplot(Replicate,aes(dv,classnum))
+scatter+geom_point(aes(size=1))+labs(x="Correct Response to Teleological Explanation",y="Number of Science Class")
+```
+
+Scatter Plot with Smooth Line
+```{r}
+scatter+geom_point(aes(size=1))+geom_smooth(method='lm',aes(fill=as.factor(condition)),alpha=0.2)+labs(x="Correct Response to Teleological Explanation",y="Number of Science Class")
+```
+
+Correlation Coefficient
+```{r}
+cor.test(Replicate$dv, Replicate$classnum, method= "pearson")
+```
+
+Boxplot
+```{r}
+Boxplot <- ggplot(Replicate, aes(as.factor(condition), dv))
+Boxplot+geom_boxplot() +labs(x="condition",y="Correct Responst to TE")
+```
+
