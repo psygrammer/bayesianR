@@ -32,6 +32,7 @@ Read data
 
 ```r
 Replicate <- read.csv("C:/Users/Yoo/Documents/GitHub/bayesianR/part1/ch03/forR.csv", header=T)
+<<<<<<< HEAD
 Replicate
 ```
 
@@ -54,6 +55,8 @@ Replicate
 ## 15      15 29.0323       17         3
 ## 16      16 41.9355        1         3
 ## 17      17 51.6129       33         3
+=======
+>>>>>>> origin/master
 ```
 
 dv - 전체 목적론적 설명 중, 틀린 목적론적 설명이 옳다고 판단한 비율
