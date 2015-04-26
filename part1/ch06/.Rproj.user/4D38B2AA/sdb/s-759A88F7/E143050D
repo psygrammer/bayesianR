@@ -1,0 +1,16 @@
+{
+    "contents" : "source(\"DBDA2E-utilities.R\")  # Load definitions of graphics functions etc.\nsource(\"BernBeta.R\")          # Load the definition of the BernBeta function\n\n# Specify the prior:\nt = 0.75             # Specify the prior MODE.\nn = 25               # Specify the effective prior sample size.\na = t*(n-2) + 1      # Convert to beta shape parameter a.\nb = (1-t)*(n-2) + 1  # Convert to beta shape parameter b.\n\nPrior = c(a,b)       # Specify Prior as vector with the two shape parameters.\n\n# Specify the data:\nN = 20                         # The total number of flips.\nz = 17                         # The number of heads.\nData = c(rep(0,N-z),rep(1,z))  # Convert N and z into vector of 0's and 1's.\n\nopenGraph(width=5,height=7)\nposterior = BernBeta( priorBetaAB=Prior, Data=Data , plotType=\"Bars\" , \n                      showCentTend=\"Mode\" , showHDI=TRUE , showpD=FALSE )\nsaveGraph(file=\"BernBetaExample\",type=\"png\")\n",
+    "created" : 1426673926935.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "685145296",
+    "id" : "E143050D",
+    "lastKnownWriteTime" : 1421922078,
+    "path" : "~/bayesch6/BernBetaExample.R",
+    "project_path" : "BernBetaExample.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
