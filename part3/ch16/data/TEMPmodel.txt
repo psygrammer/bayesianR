@@ -1,0 +1,9 @@
+
+  model {
+    for ( i in 1:Ntotal ) {
+      y[i] ~ dnorm( mu , 1/sigma^2 )
+    }
+    mu ~ dnorm( meanY , 1/(100*sdY)^2 )
+    sigma ~ dunif( sdY/1000 , sdY*1000 )
+  }
+  
