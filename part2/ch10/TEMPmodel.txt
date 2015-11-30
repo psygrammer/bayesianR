@@ -1,0 +1,21 @@
+
+model {
+  for ( i in 1:N ) {
+    y[i] ~ dbern( theta )
+  }
+  theta <- equals(m,1)*theta1 + equals(m,2)*theta2
+  theta1 ~ dbeta( omega1[m]*(kappa1[m]-2)+1 , (1-omega1[m])*(kappa1[m]-2)+1 ) 
+  omega1[1] <- .10 # true prior value
+  omega1[2] <- .40 # pseudo prior value
+  kappa1[1] <- 20 # true prior value
+  kappa1[2] <- 50 # pseudo prior value
+  theta2 ~ dbeta( omega2[m]*(kappa2[m]-2)+1 , (1-omega2[m])*(kappa2[m]-2)+1 ) 
+  omega2[1] <- .70 # pseudo prior value
+  omega2[2] <- .90 # true prior value
+  kappa2[1] <- 50 # pseudo prior value
+  kappa2[2] <- 20 # true prior value
+  m ~ dcat( mPriorProb[] )
+  mPriorProb[1] <- .5
+  mPriorProb[2] <- .5
+}
+
